@@ -1,146 +1,207 @@
 'use client';
 
-import { Check } from 'lucide-react';
+import { Check, Zap, Cpu, Globe } from 'lucide-react';
+import { useState } from 'react';
 
 const plans = [
-  {
-    name: 'Starter',
-    price: '$49',
-    period: '/month',
-    description: 'Perfect for small businesses getting started with AI marketing',
-    features: [
-      'Up to 10,000 monthly visitors',
-      'Basic AI analytics',
-      '5 marketing campaigns',
-      'Email support',
-      'Basic reporting',
-      '1 user account',
-    ],
-    cta: 'Start Free Trial',
-    highlighted: false,
-  },
-  {
-    name: 'Professional',
-    price: '$149',
-    period: '/month',
-    description: 'Ideal for growing businesses that need advanced features',
-    features: [
-      'Up to 100,000 monthly visitors',
-      'Advanced AI analytics',
-      'Unlimited campaigns',
-      'Priority support',
-      'Custom reporting',
-      '5 user accounts',
-      'API access',
-      'A/B testing',
-    ],
-    cta: 'Start Free Trial',
-    highlighted: true,
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    period: '',
-    description: 'For large organizations with custom requirements',
-    features: [
-      'Unlimited monthly visitors',
-      'Enterprise AI analytics',
-      'Unlimited everything',
-      'Dedicated support',
-      'Custom integrations',
-      'Unlimited users',
-      'Advanced API access',
-      'White-label options',
-      'Custom training',
-    ],
-    cta: 'Contact Sales',
-    highlighted: false,
-  },
+	{
+		name: 'Starter',
+		price: '$49',
+		period: '/mo',
+		description: 'Essential AI insights for early-stage startups.',
+		features: [
+			'10,000 monthly active users',
+			'Basic predictive modeling',
+			'3 active campaigns',
+			'Data retention: 3 months',
+			'Email support',
+			'1 team member',
+		],
+		cta: 'Get Started',
+		icon: Zap,
+		highlighted: false,
+		color: 'from-blue-400 to-blue-600',
+	},
+	{
+		name: 'Growth',
+		price: '$149',
+		period: '/mo',
+		description: 'Advanced intelligence for scaling teams.',
+		features: [
+			'100,000 monthly active users',
+			'Advanced behavioral cohorts',
+			'Unlimited campaigns',
+			'Data retention: 1 year',
+			'Priority slack support',
+			'5 team members',
+			'API Access',
+			'Custom Events',
+		],
+		cta: 'Start Free Trial',
+		icon: Cpu,
+		highlighted: true,
+		color: 'from-brand-blue to-brand-cyan',
+	},
+	{
+		name: 'Enterprise',
+		price: 'Custom',
+		period: '',
+		description: 'Full-spectrum data sovereignty and dedicated support.',
+		features: [
+			'Unlimited MAUs',
+			'Custom LLM fine-tuning',
+			'Dedicated infrastructure',
+			'Unlimited retention',
+			'24/7 dedicated success manager',
+			'SSO & Advanced Security',
+			'On-premise deployment option',
+			'Audit logs',
+		],
+		cta: 'Contact Sales',
+		icon: Globe,
+		highlighted: false,
+		color: 'from-purple-400 to-purple-600',
+	},
 ];
 
 export default function Pricing() {
-  return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-blue-50">
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Simple,{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Transparent Pricing
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600">
-            Choose the perfect plan for your business. All plans include a 14-day free trial.
-          </p>
-        </div>
+	const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative rounded-2xl p-8 ${
-                plan.highlighted
-                  ? 'bg-gradient-to-br from-purple-600 to-blue-600 text-white shadow-2xl scale-105 border-4 border-white'
-                  : 'bg-white text-gray-900 border border-gray-200'
-              } transition-all hover:shadow-xl`}
-            >
-              {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-purple-900 px-4 py-1 rounded-full text-sm font-bold">
-                  Most Popular
-                </div>
-              )}
+	return (
+		<section className="py-32 bg-brand-navy relative overflow-hidden">
+			{/* Background Elements */}
+			<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[100px]" />
+				<div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[80px]" />
+			</div>
 
-              <div className="text-center mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
-                  {plan.name}
-                </h3>
-                <div className="flex items-end justify-center mb-2">
-                  <span className={`text-5xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
-                    {plan.price}
-                  </span>
-                  <span className={`text-xl ml-2 ${plan.highlighted ? 'text-purple-100' : 'text-gray-500'}`}>
-                    {plan.period}
-                  </span>
-                </div>
-                <p className={`text-sm ${plan.highlighted ? 'text-purple-100' : 'text-gray-600'}`}>
-                  {plan.description}
-                </p>
-              </div>
+			<div className="container mx-auto px-6 relative z-10">
+				{/* Section Header */}
+				<div className="text-center max-w-3xl mx-auto mb-20">
+					<h2 className="text-sm font-semibold text-brand-cyan uppercase tracking-widest mb-4">Pricing</h2>
+					<h3 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+						Predictable pricing for <br />
+						<span className="bg-gradient-to-r from-brand-blue to-brand-cyan bg-clip-text text-transparent">
+							unpredictable growth
+						</span>
+					</h3>
+					<p className="text-xl text-brand-gray/80 mb-8">
+						{' '}
+						Invest in intelligence, not just software. Scale seamlessly as your data needs grow.
+					</p>
 
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start space-x-3">
-                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-green-300' : 'text-green-500'}`} />
-                    <span className={plan.highlighted ? 'text-purple-50' : 'text-gray-700'}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+					{/* Billing Toggle */}
+					<div className="flex items-center justify-center gap-4">
+						<span
+							className={`text-sm font-medium transition-colors ${
+								billingCycle === 'monthly' ? 'text-white' : 'text-brand-gray'
+							}`}
+						>
+							Monthly
+						</span>
+						<button
+							onClick={() =>
+								setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')
+							}
+							className="w-14 h-7 bg-white/10 rounded-full relative transition-colors focus:outline-none focus:ring-2 focus:ring-brand-cyan/50"
+						>
+							<div
+								className={`absolute top-1 left-1 w-5 h-5 bg-brand-cyan rounded-full transition-transform duration-300 ${
+									billingCycle === 'yearly' ? 'translate-x-7' : 'translate-x-0'
+								}`}
+							/>
+						</button>
+						<span
+							className={`text-sm font-medium transition-colors ${
+								billingCycle === 'yearly' ? 'text-white' : 'text-brand-gray'
+							}`}
+						>
+							Yearly{' '}
+							<span className="text-brand-cyan text-xs ml-1">(Save 20%)</span>
+						</span>
+					</div>
+				</div>
 
-              <button
-                className={`w-full py-3 rounded-full font-semibold transition-all ${
-                  plan.highlighted
-                    ? 'bg-white text-purple-600 hover:bg-purple-50'
-                    : 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg'
-                }`}
-              >
-                {plan.cta}
-              </button>
-            </div>
-          ))}
-        </div>
+				{/* Pricing Cards */}
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+					{plans.map((plan, index) => (
+						<div
+							key={index}
+							className={`relative rounded-3xl p-8 backdrop-blur-xl border transition-all duration-300 group
+                ${plan.highlighted
+								? 'bg-brand-blue/10 border-brand-blue/50 shadow-[0_0_40px_rgba(59,91,255,0.2)] hover:shadow-[0_0_60px_rgba(59,91,255,0.3)]'
+								: 'bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/10'
+							}`}
+						>
+							{plan.highlighted && (
+								<div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-brand-blue to-brand-cyan text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
+									Most Popular
+								</div>
+							)}
 
-        {/* FAQ Teaser */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-4">
-            Have questions? Check out our <a href="#faq" className="text-purple-600 font-semibold hover:underline">FAQ</a> or{' '}
-            <a href="#contact" className="text-purple-600 font-semibold hover:underline">contact us</a>
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+							<div className="mb-8">
+								<div
+									className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br ${plan.color} opacity-90`}
+								>
+									<plan.icon className="text-white w-6 h-6" />
+								</div>
+								<h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+								<p className="text-brand-gray/80 text-sm h-10">{plan.description}</p>
+							</div>
+
+							<div className="mb-8 p-6 bg-black/20 rounded-2xl border border-white/5">
+								<div className="flex items-baseline gap-1">
+									<span className="text-4xl font-bold text-white">{plan.price}</span>
+									{plan.price !== 'Custom' && (
+										<span className="text-brand-gray text-sm">{plan.period}</span>
+									)}
+								</div>
+								{billingCycle === 'yearly' && plan.price !== 'Custom' && (
+									<p className="text-brand-cyan/80 text-xs mt-2">
+										Billed $
+										{parseInt(plan.price.replace('$', '')) * 12 * 0.8} yearly
+									</p>
+								)}
+							</div>
+
+							<ul className="space-y-4 mb-10">
+								{plan.features.map((feature, i) => (
+									<li key={i} className="flex items-start text-brand-gray/90 text-sm">
+										<Check
+											className={`w-5 h-5 mr-3 shrink-0 ${
+												plan.highlighted ? 'text-brand-cyan' : 'text-brand-blue'
+											}`}
+										/>
+										<span>{feature}</span>
+									</li>
+								))}
+							</ul>
+
+							<button
+								className={`w-full py-4 rounded-xl font-semibold transition-all duration-300
+                  ${plan.highlighted
+										? 'bg-gradient-to-r from-brand-blue to-brand-cyan text-white shadow-lg hover:shadow-brand-blue/50 hover:scale-[1.02]'
+										: 'bg-white/10 text-white hover:bg-white/20 hover:scale-[1.02]'
+									}
+                `}
+							>
+								{plan.cta}
+							</button>
+						</div>
+					))}
+				</div>
+
+				{/* Enterprise Banner */}
+				<div className="mt-20 max-w-4xl mx-auto bg-gradient-to-r from-brand-blue/10 to-brand-cyan/10 border border-white/10 rounded-2xl p-8 md:p-12 text-center backdrop-blur-md">
+					<h4 className="text-2xl font-bold text-white mb-4">Need a custom solution?</h4>
+					<p className="text-brand-gray mb-8">
+						We offer tailored infrastructure and dedicated support models for high-volume enterprises.
+					</p>
+					<button className="px-8 py-3 bg-white text-brand-navy font-bold rounded-full hover:bg-gray-100 transition-colors">
+						Contact Enterprise Sales
+					</button>
+				</div>
+			</div>
+		</section>
+	);
 }

@@ -1,140 +1,112 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Users, Target, Zap, Award } from 'lucide-react';
+import { Users, Target, Zap, Award, BarChart, Server } from 'lucide-react';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-brand-navy text-white overflow-hidden selection:bg-brand-blue selection:text-white">
       <Header />
-      <main className="pt-20">
+      <main className="pt-32 pb-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-blue-50">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                About{' '}
-                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  Ryze AI
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                We're on a mission to democratize AI-powered marketing intelligence, 
-                making advanced analytics accessible to businesses of all sizes.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Story */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold mb-8 text-center">Our Story</h2>
-              <div className="prose prose-lg max-w-none text-gray-600">
-                <p className="mb-6">
-                  Founded in 2022, Ryze AI was born from a simple observation: marketing teams 
-                  were drowning in data but starving for insights. Our founders, seasoned marketing 
-                  professionals and AI researchers, saw an opportunity to bridge this gap.
-                </p>
-                <p className="mb-6">
-                  We built Ryze AI to transform how businesses understand and leverage their 
-                  marketing data. By combining cutting-edge artificial intelligence with intuitive 
-                  design, we've created a platform that turns complex data into clear, actionable strategies.
-                </p>
-                <p>
-                  Today, we serve over 5,000 companies worldwide, from innovative startups to 
-                  Fortune 500 enterprises, helping them make smarter marketing decisions faster.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Values */}
-        <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-blue-50">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Customer First</h3>
-                <p className="text-gray-600">
-                  Every decision we make starts with our customers' needs and success.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Innovation</h3>
-                <p className="text-gray-600">
-                  We continuously push the boundaries of what's possible with AI and marketing.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Speed</h3>
-                <p className="text-gray-600">
-                  We move fast, iterate quickly, and deliver value to our customers rapidly.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Excellence</h3>
-                <p className="text-gray-600">
-                  We strive for excellence in everything we do, from code to customer support.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-bold mb-6">Meet Our Team</h2>
-              <p className="text-xl text-gray-600 mb-12">
-                We're a diverse team of engineers, designers, and marketing experts 
-                passionate about transforming the marketing industry.
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {['CEO', 'CTO', 'Head of Product', 'Head of Design', 'VP Engineering', 'VP Marketing', 'Head of Sales', 'Head of Support'].map((role, i) => (
-                  <div key={i} className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-400 to-blue-400"></div>
-                    <div className="font-semibold text-gray-900">Team Member</div>
-                    <div className="text-sm text-gray-600">{role}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
-          <div className="container mx-auto px-6 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Marketing?
-            </h2>
-            <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of companies already using Ryze AI to make smarter marketing decisions.
+        <section className="relative py-24 px-6 overflow-hidden">
+           {/* Background Decoration */}
+           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-cyan/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+           
+           <div className="container mx-auto text-center relative z-10">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
+              Pioneering the Future of <br />
+              <span className="bg-gradient-to-r from-brand-blue via-brand-cyan to-brand-blue bg-clip-text text-transparent animate-gradient bg-200%">
+                Autonomous Marketing
+              </span>
+            </h1>
+            <p className="text-xl text-brand-gray/80 max-w-2xl mx-auto leading-relaxed font-light">
+              We're engineers, data scientists, and marketers building the intelligence layer that will power the next generation of growth.
             </p>
-            <a
-              href="/#contact"
-              className="inline-block px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all"
-            >
-              Get Started Free
-            </a>
+          </div>
+        </section>
+
+        {/* Our Story Grid */}
+        <section className="py-20">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <h2 className="text-sm font-semibold text-brand-cyan uppercase tracking-widest">Our Story</h2>
+                <h3 className="text-4xl font-bold leading-tight">From data saturation to <br />clarity.</h3>
+                <div className="space-y-6 text-brand-gray/80 text-lg leading-relaxed">
+                  <p>
+                    In 2022, we noticed a critical flaw in the modern marketing stack: <strong>fragmentation</strong>. Teams were drowning in dashboards, yet starving for truth. The available tools told you <em>what</em> happened, but never <em>why</em>.
+                  </p>
+                  <p>
+                    Ryze AI was architected to solve this infrastructure problem. We didn't just want to build another analytics tool; we wanted to build a central nervous system for growth.
+                  </p>
+                  <p>
+                    By training proprietary models on over 800M+ data points, we've created a platform that doesn't just report—it predicts, suggests, and empowers human creativity by handling the computational heavy lifting.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue to-brand-cyan rounded-2xl blur-lg opacity-30 transform rotate-3" />
+                <div className="relative bg-[#1a2333] border border-white/10 rounded-2xl p-8 backdrop-blur-sm shadow-2xl">
+                   {/* Abstract Tech Illustration placeholder */}
+                   <div className="aspect-[4/3] w-full rounded-lg bg-black/40 border border-white/5 flex flex-col items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-blue/20 to-transparent" />
+                      <div className="grid grid-cols-6 gap-2 w-full px-8 animate-pulse text-brand-blue/40">
+                         {[...Array(24)].map((_, i) => (
+                           <div key={i} className="h-12 rounded bg-current opacity-20" />
+                         ))}
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-[#0B1220] p-6 rounded-2xl border border-brand-blue/30 shadow-[0_0_50px_rgba(59,91,255,0.3)] hover:scale-105 transition-transform duration-500">
+                          <BarChart className="w-12 h-12 text-brand-cyan mb-2" />
+                          <div className="h-2 w-20 bg-brand-gray/20 rounded mb-1" />
+                          <div className="h-2 w-12 bg-brand-gray/20 rounded" />
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-20 border-y border-white/5 bg-white/5 backdrop-blur-sm">
+           <div className="container mx-auto px-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                 {[
+                   { label: 'Data Points Processed', value: '800M+' },
+                   { label: 'Predictions Served', value: '12k/sec' },
+                   { label: 'Enterprise Clients', value: '500+' },
+                   { label: 'Uptime', value: '99.99%' },
+                 ].map((stat, i) => (
+                   <div key={i}>
+                      <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
+                      <div className="text-brand-gray font-medium">{stat.label}</div>
+                   </div>
+                 ))}
+              </div>
+           </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="py-32">
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl font-bold mb-16 text-center">Build for impact</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Users, title: 'Obsessive Utility', desc: 'We don’t build shelfware. If it doesn\'t drive revenue, it doesn\'t ship.', color: 'text-brand-blue' },
+                { icon: Server, title: 'Data Sovereignty', desc: 'Your data is your IP. We architect for privacy and security first.', color: 'text-purple-400' },
+                { icon: Zap, title: 'Speed as Capability', desc: 'In real-time bidding and reaction, milliseconds equate to millions.', color: 'text-yellow-400' },
+                { icon: Target, title: 'Radical Truth', desc: 'Our algorithms are unbiased. We tell you what the data says, not what you want to hear.', color: 'text-brand-cyan' },
+              ].map((value, i) => (
+                <div key={i} className="p-8 rounded-2xl bg-[#111A29] border border-white/5 hover:border-brand-blue/40 transition-colors group">
+                   <value.icon className={`w-10 h-10 mb-6 ${value.color} group-hover:scale-110 transition-transform`} />
+                   <h3 className="text-xl font-bold mb-3 text-white">{value.title}</h3>
+                   <p className="text-brand-gray/70 leading-relaxed">{value.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>

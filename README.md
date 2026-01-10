@@ -130,7 +130,7 @@ Each component is:
 
 ## 🌐 Live Demo
 
-[View Live Demo](https://your-deployment-url.vercel.app)
+[View Live Demo](https://ryze-ashvin-dncy.vercel.app/)
 
 ## 🙏 Acknowledgments
 

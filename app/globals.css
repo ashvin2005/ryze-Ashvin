@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Brand Colors */
+  --color-brand-navy: #0B1220;
+  --color-brand-blue: #3B5BFF;
+  --color-brand-cyan: #2EF2FF;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gray: #F3F5F7;
+  --color-brand-slate: #1E293B;
+
+  /* Semantic Colors */
+  --background: var(--color-brand-navy);
+  --foreground: var(--color-brand-white);
+  
+  --primary: var(--color-brand-blue);
+  --primary-foreground: var(--color-brand-white);
+  
+  --secondary: var(--color-brand-cyan);
+  --secondary-foreground: var(--color-brand-navy);
+
+  --muted: var(--color-brand-slate);
+  --muted-foreground: #94a3b8; /* Slate-400 */
+
+  --card: rgba(30, 41, 59, 0.5); /* Glassmorphic card base */
+  --card-foreground: var(--color-brand-white);
+
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+
+  --color-brand-navy: var(--color-brand-navy);
+  --color-brand-blue: var(--color-brand-blue);
+  --color-brand-cyan: var(--color-brand-cyan);
+  --color-brand-slate: var(--color-brand-slate);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  --animate-blob: blob 7s infinite;
+  
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 200%;
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-gradient {
+    animation: gradient 6s ease infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
