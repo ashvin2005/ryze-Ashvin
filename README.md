@@ -101,23 +101,6 @@ npm start
 npm run lint
 ```
 
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Import project to Vercel
-3. Deploy with one click
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/ryze-redesign)
-
-### Deploy to Netlify
-
-1. Push your code to GitHub
-2. Connect repository to Netlify
-3. Set build command: `npm run build`
-4. Set publish directory: `.next`
-
 ## 📝 Design & Structural Decisions
 
 ### Why Next.js 15?
@@ -148,21 +131,6 @@ Each component is:
 ## 🌐 Live Demo
 
 [View Live Demo](https://your-deployment-url.vercel.app)
-
-## 📸 Screenshots
-
-### Homepage
-![Homepage](./screenshots/homepage.png)
-
-### Pricing Page
-![Pricing](./screenshots/pricing.png)
-
-### About Page
-![About](./screenshots/about.png)
-
-## 📄 License
-
-This project is created for educational/assignment purposes.
 
 ## 🙏 Acknowledgments
 
