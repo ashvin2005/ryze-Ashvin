@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-brand-navy overflow-hidden">
       <Header />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <Features />
         <HowItWorks />

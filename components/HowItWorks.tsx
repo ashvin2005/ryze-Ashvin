@@ -78,7 +78,7 @@ export default function HowItWorks() {
 
 								{/* Content */}
 								<div className="mb-2 text-sm font-mono text-brand-gray/60 uppercase tracking-widest">
-									0{index + 1} // {step.title}
+									0{index + 1} {'//'} {step.title}
 								</div>
 								<h4 className="text-2xl font-bold text-white mb-4">
 									{step.subtitle}

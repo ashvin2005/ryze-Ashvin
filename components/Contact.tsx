@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Send, Mail, MapPin } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({

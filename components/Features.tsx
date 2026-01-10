@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Brain, TrendingUp, Target, Zap, Shield, BarChart3, ArrowUpRight, Cpu } from 'lucide-react';
+import { Brain, TrendingUp, Zap, Shield, ArrowUpRight } from 'lucide-react';
 
 export default function Features() {
   return (
@@ -14,7 +14,7 @@ export default function Features() {
               <span className="text-brand-gray/50">Exponential Scale</span>
             </h2>
             <p className="text-lg text-brand-gray/80 font-light">
-              We've replaced the traditional ad-hoc marketing stack with a cohesive intelligence layer. Every component is designed to compound the value of your data.
+              We&apos;ve replaced the traditional ad-hoc marketing stack with a cohesive intelligence layer. Every component is designed to compound the value of your data.
             </p>
           </div>
           <Link 

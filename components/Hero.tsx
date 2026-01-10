@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Activity, PieChart, Users, ChevronRight, BarChart3, TrendingUp } from 'lucide-react';
+import { ArrowRight, ChevronRight, BarChart3, Activity, Users, PieChart } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -57,15 +57,18 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </Link>
-          <Link
-            href="/#how-it-works"
-            className="group px-8 py-4 bg-white/5 text-white backdrop-blur-sm border border-white/10 rounded-full font-semibold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2"
+          <button
+            onClick={() => {
+              const el = document.getElementById('how-it-works');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="group px-8 py-4 bg-white/5 text-white backdrop-blur-sm border border-white/10 rounded-full font-semibold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 cursor-pointer"
           >
             <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-white border-b-[5px] border-b-transparent ml-1" />
             </span>
             Watch Demo
-          </Link>
+          </button>
         </div>
 
         {/* 3D Dashboard Visualization */}
@@ -99,22 +102,28 @@ export default function Hero() {
                 </div>
                 
                 <div className="space-y-2">
-                  <div className="text-xs font-semibold text-brand-gray/40 uppercase tracking-widest pl-3">Main</div>
                   {[
                     { name: 'Dashboard', icon: BarChart3, active: true },
                     { name: 'Analytics', icon: Activity, active: false },
                     { name: 'Audience', icon: Users, active: false },
                     { name: 'Campaigns', icon: PieChart, active: false },
-                  ].map((item) => (
-                    <div key={item.name} className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors cursor-pointer ${item.active ? 'bg-brand-blue/10 text-brand-cyan' : 'text-brand-gray/60 hover:text-white hover:bg-white/5'}`}>
-                      <item.icon size={18} />
+                  ].map((item, i) => (
+                    <div 
+                      key={i}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                        item.active 
+                          ? 'bg-brand-blue/10 text-brand-cyan border border-brand-blue/20' 
+                          : 'text-brand-gray hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      <item.icon className="w-4 h-4" />
                       {item.name}
                     </div>
                   ))}
                 </div>
               </div>
-
-              {/* Main View */}
+              
+              {/* Main Area */}
               <div className="p-8 overflow-hidden relative">
                 <div className="flex justify-between items-end mb-10">
                   <div>

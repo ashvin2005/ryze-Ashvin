@@ -1,6 +1,8 @@
+'use client';
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Users, Target, Zap, Award, BarChart, Server } from 'lucide-react';
+import { Users, Target, Zap, BarChart, Server } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -20,7 +22,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-xl text-brand-gray/80 max-w-2xl mx-auto leading-relaxed font-light">
-              We're engineers, data scientists, and marketers building the intelligence layer that will power the next generation of growth.
+              We&apos;re engineers, data scientists, and marketers building the intelligence layer that will power the next generation of growth.
             </p>
           </div>
         </section>
@@ -37,10 +39,10 @@ export default function AboutPage() {
                     In 2022, we noticed a critical flaw in the modern marketing stack: <strong>fragmentation</strong>. Teams were drowning in dashboards, yet starving for truth. The available tools told you <em>what</em> happened, but never <em>why</em>.
                   </p>
                   <p>
-                    Ryze AI was architected to solve this infrastructure problem. We didn't just want to build another analytics tool; we wanted to build a central nervous system for growth.
+                    Ryze AI was architected to solve this infrastructure problem. We didn&apos;t just want to build another analytics tool; we wanted to build a central nervous system for growth.
                   </p>
                   <p>
-                    By training proprietary models on over 800M+ data points, we've created a platform that doesn't just report—it predicts, suggests, and empowers human creativity by handling the computational heavy lifting.
+                    By training proprietary models on over 800M+ data points, we&apos;ve created a platform that doesn&apos;t just report—it predicts, suggests, and empowers human creativity by handling the computational heavy lifting.
                   </p>
                 </div>
               </div>
@@ -95,7 +97,7 @@ export default function AboutPage() {
             <h2 className="text-4xl font-bold mb-16 text-center">Build for impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: Users, title: 'Obsessive Utility', desc: 'We don’t build shelfware. If it doesn\'t drive revenue, it doesn\'t ship.', color: 'text-brand-blue' },
+                { icon: Users, title: 'Obsessive Utility', desc: 'We don’t build shelfware. If it doesn&apos;t drive revenue, it doesn&apos;t ship.', color: 'text-brand-blue' },
                 { icon: Server, title: 'Data Sovereignty', desc: 'Your data is your IP. We architect for privacy and security first.', color: 'text-purple-400' },
                 { icon: Zap, title: 'Speed as Capability', desc: 'In real-time bidding and reaction, milliseconds equate to millions.', color: 'text-yellow-400' },
                 { icon: Target, title: 'Radical Truth', desc: 'Our algorithms are unbiased. We tell you what the data says, not what you want to hear.', color: 'text-brand-cyan' },

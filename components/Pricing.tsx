@@ -2,6 +2,7 @@
 
 import { Check, Zap, Cpu, Globe } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const plans = [
 	{
@@ -151,15 +152,20 @@ export default function Pricing() {
 
 							<div className="mb-8 p-6 bg-black/20 rounded-2xl border border-white/5">
 								<div className="flex items-baseline gap-1">
-									<span className="text-4xl font-bold text-white">{plan.price}</span>
+									<span className="text-4xl font-bold text-white">
+                                        {plan.price !== 'Custom' 
+                                            ? (billingCycle === 'yearly' 
+                                                ? `$${Math.floor(parseInt(plan.price.replace('$', '')) * 0.8)}` 
+                                                : plan.price) 
+                                            : plan.price}
+                                    </span>
 									{plan.price !== 'Custom' && (
 										<span className="text-brand-gray text-sm">{plan.period}</span>
 									)}
 								</div>
 								{billingCycle === 'yearly' && plan.price !== 'Custom' && (
 									<p className="text-brand-cyan/80 text-xs mt-2">
-										Billed $
-										{parseInt(plan.price.replace('$', '')) * 12 * 0.8} yearly
+										Billed annually
 									</p>
 								)}
 							</div>
