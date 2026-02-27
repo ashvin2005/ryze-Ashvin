@@ -1,6 +1,6 @@
 # Ryze AI
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ installed
@@ -26,7 +26,7 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
@@ -58,7 +58,7 @@ ryze-redesign/
 └── public/               # Static assets
 ```
 
-## 🎨 Design Decisions
+## Design Decisions
 
 ### Color Scheme
 - **Primary**: Purple (#7C3AED) to Blue (#2563EB) gradients
@@ -79,7 +79,7 @@ ryze-redesign/
 - Subtle blob animations in hero background
 - Scale transforms on CTAs for engagement
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - **Mobile**: < 768px
 - **Tablet**: 768px - 1024px
@@ -101,7 +101,7 @@ npm start
 npm run lint
 ```
 
-## 📝 Design & Structural Decisions
+## Design & Structural Decisions
 
 ### Why Next.js 15?
 - Server-side rendering for better SEO
@@ -128,11 +128,11 @@ Each component is:
 - CSS-in-JS with Tailwind for minimal CSS
 - Code splitting by page
 
-## 🌐 Live Demo
+## Live Demo
 
 [View Live Demo](https://ryze-ashvin-dncy.vercel.app/)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Original website: [Get-Ryze.ai](https://www.get-ryze.ai/)
 - Icons: [Lucide Icons](https://lucide.dev/)
